@@ -9,7 +9,7 @@ public class CalculatorController {
 
     //add
 
-    @RequestMapping("add")
+    @RequestMapping("/add")
     public String addition(){
 
         int a=6;
