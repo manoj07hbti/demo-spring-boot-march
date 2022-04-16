@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,11 +10,8 @@ public class CalculatorController {
 
     //add
 
-    @RequestMapping("/add")
-    public String addition(){
-
-        int a=6;
-        int b=3;
+    @RequestMapping("/add/{a}/{b}")
+    public String addition(@PathVariable int a, @PathVariable int b){
 
         return  "Addition is: "+(a+b) ;
     }
