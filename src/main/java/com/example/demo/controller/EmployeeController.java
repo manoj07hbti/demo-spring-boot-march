@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.Employee;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,8 +16,8 @@ public class EmployeeController {
     //1- create
 
     @RequestMapping("add_emp")
-    public String add(){
-     Employee employee=new Employee("Raj",1,"IT");
+    public String add(@RequestBody Employee employee){
+
         employeeArrayList.add(employee);
       return "Employee added Succefully...";
     }
