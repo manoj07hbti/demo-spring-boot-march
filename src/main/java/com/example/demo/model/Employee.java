@@ -1,10 +1,23 @@
 package com.example.demo.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity(name = "EMPLOYEE_7_AM")
 public class Employee {
 
-    String  name;
+    @Id
+    @GeneratedValue
     int id;
+    String  name;
+    @Column(name = "EMP_DEPT")
     String dept;
+
+    //default constructor
+    public Employee() {
+    }
 
     public Employee(String name, int id, String dept) {
         this.name = name;
