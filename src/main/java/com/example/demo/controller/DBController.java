@@ -36,14 +36,17 @@ public class DBController {
 
     //update
 
-  /*  public String update(@RequestParam String name, @RequestParam Integer id){
+    @RequestMapping(value = "update_emp_db",method = RequestMethod.PUT)
+    public String update(@RequestParam String name, @RequestParam Integer id){
 
         //1 get the object from DB
-        *//*Optional<Employee> employee= repository.findById(id);
-        employee.get().setName(name);
+        Employee employee= repository.getById(id);
+        //2 change the name
+        employee.setName(name);
+        //3 save again to DB
         repository.save(employee);
-        return "Name updates Succsessfully ";*//*
-    }*/
+        return "Name updates Succsessfully ";
+    }
 
     @RequestMapping(value = "delete_emp_db", method =RequestMethod.DELETE)
       public String delete(@RequestParam Integer id){
